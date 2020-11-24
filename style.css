@@ -1,0 +1,145 @@
+* {
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.face {
+    width: 650px;
+    height: 420px;
+    background-color: #f8ddce;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    flex-direction: column;
+}
+
+.eyes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.eye {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid black;
+    top: 50px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.eye::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    right: 35px;
+    animation: eyesmove .1s infinite ease-in-out alternate;
+} 
+
+.eye::after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -13px;
+    left: 60px;
+    animation: eyesmove .1s infinite ease-in-out alternate;
+}
+
+@keyframes eyesmove {
+    0% {
+        transform: translateX(-1px);
+    }
+
+    100% {
+        transform: translateX(1px);
+    }
+}
+
+.mouth {
+    width: 300px;
+    height: 90px;
+    background-color: black;
+    position: relative;
+    left: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid black;
+    overflow: hidden;
+}
+
+.tooth {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.t-left {
+    position: relative;
+    top: -11px;
+    left: 15px;
+}
+
+.t-center {
+    position: relative;
+    top: -16px;
+    left: 10px;
+}
+
+.t-right {
+    position: relative;
+    top: -13px;
+}
+
+.tongue {
+    width: 100px;
+    height: 50px;
+    background: #ea6e74;
+    position: absolute;
+    left: 140px;
+    top: 60px;
+    border-radius: 50%;
+}
+
+.cheek {
+    width: 60px;
+    height: 80px;
+    background-color: #f8ddce;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.c-left {
+    top: 280px;
+    left: 440px;
+    border-left:3px solid black;
+    transform: rotate( -15deg);
+}
+
+.c-right {
+    top: 280px;
+    left: 140px;
+    border-right:3px solid black;
+    transform: rotate( 15deg);
+}
